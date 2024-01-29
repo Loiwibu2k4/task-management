@@ -11,7 +11,16 @@ const taskSchema = new mongoose.Schema(
             user_id: String,
             deletedAt: Date
         },
-        deleted: Boolean
+        deleted: {
+            type: Boolean,
+            default: false
+        },
+        createdBy: String,
+        participants: {
+            type: Array,
+            default: []
+        },
+        parent_id: String
     },
     {timestamps: true}
 );
